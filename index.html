@@ -1,101 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dukon Loyihasi - Kirish</title>
+    <title>Dukon Kirish</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: sans-serif;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
         }
         
-        .container {
-            max-width: 400px;
-            margin: 100px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        input {
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            max-width: 350px;
         }
         
+        input,
         button {
             width: 100%;
             padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        
+        button {
             background-color: #28a745;
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #218838;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h2>Ro'yxatdan o'tish</h2>
-        <form id="user-form">
-            <label for="name">Ismingiz:</label>
-            <input type="text" id="name" required />
-
-            <label for="phone">Telefon raqamingiz:</label>
-            <input type="tel" id="phone" required />
-
-            <button type="submit">Davom etish</button>
-        </form>
+    <div class="box">
+        <h2 style="text-align:center;">Kirish</h2>
+        <input type="text" id="name" placeholder="Ismingiz" required />
+        <input type="password" id="password" placeholder="Parolingiz" required />
+        <button onclick="login()">Davom etish</button>
     </div>
 
     <script>
-        const form = document.getElementById('user-form');
+        function login() {
+            const name = document.getElementById('name').value.trim().toLowerCase();
+            const password = document.getElementById('password').value;
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-
-            if (!name || !phone) {
-                alert("Iltimos, barcha maydonlarni to'ldiring.");
-                return;
-            }
-
-            localStorage.setItem('user', JSON.stringify({
+            const user = {
                 name,
-                phone
-            }));
-            window.location.href = 'asosiy.html'; // Asosiy sahifaga o'tkazish
-        });
+                password
+            };
+            localStorage.setItem('user', JSON.stringify(user));
 
-        // Agar foydalanuvchi allaqachon ro'yxatdan o'tgan bo'lsa to'g'ridan-to'g'ri index.html ga yuboriladi
-        if (localStorage.getItem('user')) {
-            window.location.href = 'asosiy.html';
+            if (name === "damir" && password === "12345") {
+                window.location.href = "admin.html"; // Admin panel
+            } else {
+                window.location.href = "asosiy.html"; // Foydalanuvchi oynasi
+            }
+        }
+
+        // Agar ro‘yxatdan o‘tgan bo‘lsa, avtomatik yo‘naltirish
+        const saved = JSON.parse(localStorage.getItem('user'));
+        if (saved) {
+            if (saved.name === "Damir" && saved.password === "damirshakh.07") {
+                window.location.href = "admin.html";
+            } else {
+                window.location.href = "asosiy.html";
+            }
         }
     </script>
 </body>

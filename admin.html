@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <div class="max-w-xl mx-auto p-4">
+        <h1 class="text-2xl font-bold text-center mb-6 text-green-700">📦 Admin Panel</h1>
+
+        <!-- 🆕 Yangi mahsulot formasi -->
+        <div class="bg-white p-4 rounded shadow mb-6">
+            <h2 class="text-xl font-semibold mb-4">➕ Mahsulot qo‘shish</h2>
+
+            <input type="text" id="name" placeholder="Mahsulot nomi" class="w-full mb-3 p-2 border rounded" />
+            <input type="number" id="price" placeholder="Narxi (so'm)" class="w-full mb-3 p-2 border rounded" />
+            <input type="file" id="imgFile" accept="image/*" class="w-full mb-3 p-2 border rounded" />
+
+            <select id="category" class="w-full mb-3 p-2 border rounded">
+        <option value="">Kategoriya tanlang</option>
+        <option value="ichimliklar">Ichimliklar</option>
+        <option value="savzavotlar">Savzavotlar</option>
+        <option value="shirinliklar">Shirinliklar</option>
+        <option value="gusht">Go‘sht mahsulotlari</option>
+        <option value="aralash">Aralash mahsulotlar</option>
+        <option value="idishlar">Idishlar</option>
+        <option value="muzqaymoq">Muzqaymoq</option>
+        <option value="nimadur">Nimadur</option>
+      </select>
+
+            <button onclick="addProduct()" class="bg-green-600 text-white w-full py-2 rounded">✅ Qo‘shish</button>
+        </div>
+
+        <!-- 📋 Mahsulot ro‘yxati -->
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-semibold mb-4">📃 Mahsulotlar ro‘yxati</h2>
+            <div id="product-list" class="flex flex-col gap-3">
+                <!-- Mahsulotlar shu yerda chiqadi -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+        const listDiv = document.getElementById("product-list");
+
+        function renderProducts() {
+            listDiv.innerHTML = "";
+            products.forEach((p, i) => {
+                const row = document.createElement("div");
+                row.className = "flex justify-between items-center border rounded p-3";
+
+                row.innerHTML = `
+      <div>
+        <img src="${p.img}" class="w-12 h-12 inline rounded mr-2" />
+        <strong>${p.name}</strong> (${p.category}) – ${p.price} so'm
+      </div>
+      <div class="flex gap-2">
+        <button onclick="editProduct(${i})" class="bg-yellow-500 text-white px-2 rounded">✏️</button>
+        <button onclick="deleteProduct(${i})" class="bg-red-500 text-white px-2 rounded">🗑️</button>
+      </div>
+    `;
+                listDiv.appendChild(row);
+            });
+
+            localStorage.setItem("products", JSON.stringify(products));
+        }
+
+        function addProduct() {
+            const name = document.getElementById("name").value.trim();
+            const price = parseInt(document.getElementById("price").value.trim());
+            const fileInput = document.getElementById("imgFile");
+            const category = document.getElementById("category").value;
+
+            if (!name || !price || !category || fileInput.files.length === 0) {
+                return alert("Iltimos, barcha maydonlarni to‘ldiring va rasm tanlang.");
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const imgBase64 = e.target.result;
+
+                products.push({
+                    name,
+                    price,
+                    img: imgBase64,
+                    category
+                });
+
+                renderProducts();
+
+                // Tozalash
+                document.getElementById("name").value = "";
+                document.getElementById("price").value = "";
+                document.getElementById("category").value = "";
+                fileInput.value = "";
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function deleteProduct(i) {
+            if (confirm("Mahsulotni o‘chirishga ishonchingiz komilmi?")) {
+                products.splice(i, 1);
+                renderProducts();
+            }
+        }
+
+        function editProduct(i) {
+            const newPrice = prompt("Yangi narx:", products[i].price);
+            if (!newPrice || isNaN(newPrice)) return;
+            products[i].price = parseInt(newPrice);
+            renderProducts();
+        }
+
+        renderProducts();
+    </script>
+</body>
+
+</html>

@@ -111,6 +111,8 @@
             <img src="rasmlar/holodilnik.jpg" onclick="openCategory('category4')" />
             <img src="rasmlar/aralash.jpg" onclick="openCategory('category5')" />
             <img src="rasmlar/idishlar.jpg" onclick="openCategory('category6')" />
+            <img src="rasmlar/muzqaymoq.webp" onclick="openCategory('category7')" />
+            <img src="rasmlar/nimadur.webp" onclick="openCategory('category8')" />
         </div>
     </div>
     <!-- Bosh sahifa -->
@@ -118,37 +120,8 @@
     <!-- Ichimlilar Sahifasi -->
     <div id="category1" class="page">
         <button class="back-btn" onclick="showPage('home')">⬅Бош сахифа</button>
-        <div class="products">
-            <div class="product">
-                <img src="ichimliklar/drive.jpg" />
-                <div class="product-info">Drive 70 сом</div>
-                <button onclick="addToCart('Drive 70 сом')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="ichimliklar/pepsi.avif" />
-                <div class="product-info">Pepsi 80 сом</div>
-                <button onclick="addToCart('Pepsi 80 сом')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="ichimliklar/fanta.png" />
-                <div class="product-info">Fanta 80 сом</div>
-                <button onclick="addToCart('Fanta 80 сом')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="ichimliklar/cola.webp" />
-                <div class="product-info">CocaCola 80 сом</div>
-                <button onclick="addToCart('CocaCola 80 сом')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="ichimliklar/choy.jpg" />
-                <div class="product-info">Султан Чай 60 сом</div>
-                <button onclick="addToCart('Султан Чай 60 сом')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="ichimliklar/royal.jpeg" />
-                <div class="product-info">Royal 50 сом</div>
-                <button onclick="addToCart('Royal 50 сом')">+ Саватга</button>
-            </div>
+        <div class="products" id="products-ichimliklar">
+
         </div>
     </div>
     <!-- Ichimlilar Sahifasi tugadi -->
@@ -156,37 +129,8 @@
     <!-- Savzavotlar Sahifasi -->
     <div id="category2" class="page">
         <button class="back-btn" onclick="showPage('home')">⬅Бош сахифа</button>
-        <div class="products">
-            <div class="product">
-                <img src="s/bodring.jpeg" />
-                <div class="product-info">Бодринг 80 сом </div>
-                <button onclick="addToCart('Бодринг 80 сом кг')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="s/kartoshka.jpeg" />
-                <div class="product-info">Картошка 40 сом </div>
-                <button onclick="addToCart('Картошка 40 сом кг')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="s/olma.jpeg" />
-                <div class="product-info">Олма 60 сом</div>
-                <button onclick="addToCart('Олма 60 сом кг')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="s/piyoz.jpeg" />
-                <div class="product-info">Пиёз 25 сом</div>
-                <button onclick="addToCart('Пиёз 25 сом кг')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="s/pomidor.jpeg" />
-                <div class="product-info">Памидор 100 сом</div>
-                <button onclick="addToCart('Памидор 100 сом кг')">+ Саватга</button>
-            </div>
-            <div class="product">
-                <img src="s/savzi.jpeg" />
-                <div class="product-info">Савзи 50 сом</div>
-                <button onclick="addToCart('Савзи 50 сом кг')">+ Саватга</button>
-            </div>
+        <div class="products" id="products-savzavotlar">
+
         </div>
     </div>
     <!-- Savzavotlar Sahifasi tugadi -->
@@ -194,37 +138,8 @@
     <!-- Shirinliklar sahifasi -->
     <div id="category3" class="page">
         <button class="back-btn" onclick="showPage('home')">⬅ Bosh sahifaga</button>
-        <div class="products">
-            <div class="product">
-                <img src="sh/snikers.jpeg" />
-                <div class="product-info">Snickers 550 сом </div>
-                <button onclick="addToCart('Snickers 550 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="sh/shkaladlik.jpeg" />
-                <div class="product-info">SFAD 280 сом </div>
-                <button onclick="addToCart('SFAD 280 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="sh/qumlik.jpeg" />
-                <div class="product-info">Печенье С каплями 350 сом</div>
-                <button onclick="addToCart('Печенье С каплями 350 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="sh/podushka.jpeg" />
-                <div class="product-info">Подушечки 250 сом</div>
-                <button onclick="addToCart('Подушечки 250 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="sh/kitkat.jpeg" />
-                <div class="product-info">Kit Kat 550 сом</div>
-                <button onclick="addToCart('Kit Kat 550 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="sh/jek.jpeg" />
-                <div class="product-info">Джек 420 сом</div>
-                <button onclick="addToCart('Джек 420 сом кг')">+ Savatga</button>
-            </div>
+        <div class="products" id="products-shirinliklar">
+
         </div>
     </div>
     <!-- Shirinliklar sahifasi tugadi -->
@@ -232,37 +147,8 @@
     <!-- Gusht mahsulotlari -->
     <div id="category4" class="page">
         <button class="back-btn" onclick="showPage('home')">⬅ Bosh sahifaga</button>
-        <div class="products">
-            <div class="product">
-                <img src="h/akarachka.jpeg" />
-                <div class="product-info">Окарачка 240 сом </div>
-                <button onclick="addToCart('Окарачка 240 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="h/cgucgvara.jpeg" />
-                <div class="product-info">Чучвара 120 сом шт</div>
-                <button onclick="addToCart('Чучвара 120 сом шт')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="h/oyoqcha.jpeg" />
-                <div class="product-info">Оёкча 290 сом </div>
-                <button onclick="addToCart('Оёкча 290 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="h/qanot.jpeg" />
-                <div class="product-info">Канотча 320 сом </div>
-                <button onclick="addToCart('Канотча 320 сом кг')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="h/qiyma.jpeg" />
-                <div class="product-info">Кийма 120 сом шт</div>
-                <button onclick="addToCart('Кийма 120 сом шт')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="h/tovuq.jpeg" />
-                <div class="product-info">Товук 300 сом </div>
-                <button onclick="addToCart('Товук 300 сом кг')">+ Savatga</button>
-            </div>
+        <div class="products" id="products-gusht">
+
         </div>
     </div>
     <!-- Gusht mahsulotlari tugadi -->
@@ -270,37 +156,8 @@
     <!-- aralash mahsulotlari -->
     <div id="category5" class="page">
         <button class="back-btn" onclick="showPage('home')">⬅ Bosh sahifaga</button>
-        <div class="products">
-            <div class="product">
-                <img src="a/aprel.jpeg" />
-                <div class="product-info">Aprel 120 сом 900г</div>
-                <button onclick="addToCart('Aprel 120 сом 900г')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="a/machalka.jpeg" />
-                <div class="product-info">Губка 15 сом</div>
-                <button onclick="addToCart('Губка 15 сом')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="a/shampun.jpeg" />
-                <div class="product-info">Шампунь 300 сом</div>
-                <button onclick="addToCart('Шампунь 300 сом')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="a/aprel.jpeg" />
-                <div class="product-info">Aprel 120 сом 1.800г</div>
-                <button onclick="addToCart('Aprel 120 сом 1.800г')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="a/sovun.jpeg" />
-                <div class="product-info">Совун 45 сом</div>
-                <button onclick="addToCart('Совун 45 сом')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="a/suyuq.avif" />
-                <div class="product-info">Мыла 70 сом </div>
-                <button onclick="addToCart('Мыла 70 сом ')">+ Savatga</button>
-            </div>
+        <div class="products" id="products-aralash">
+
         </div>
     </div>
     <!-- aralash mahsulotlari tugadi -->
@@ -308,40 +165,26 @@
     <!-- idish mahsulotlari -->
     <div id="category6" class="page">
         <button class="back-btn" onclick="showPage('home')">⬅ Bosh sahifaga</button>
-        <div class="products">
-            <div class="product">
-                <img src="i/choynak.jpeg" />
-                <div class="product-info">Чойнак 100 сом</div>
-                <button onclick="addToCart('Чойнак 100 сом')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="i/lagancha1.jpeg" />
-                <div class="product-info">Лаганча 14 сом 0.5см</div>
-                <button onclick="addToCart('Лаганча 14 сом 0.5см')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="i/lagancha2.jpg" />
-                <div class="product-info">Лаганча 15 сом 0.6см</div>
-                <button onclick="addToCart('Лаганча 15 сом 0.6см')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="i/osh.jpeg" />
-                <div class="product-info">Ош лаган 45 сом</div>
-                <button onclick="addToCart('Ош лаган 45 сом')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="i/piyala.webp" />
-                <div class="product-info">Пиёла 14 сом</div>
-                <button onclick="addToCart('Пиёла 14 сом')">+ Savatga</button>
-            </div>
-            <div class="product">
-                <img src="i/saladga.jpeg" />
-                <div class="product-info">Салад Лаганча 30 сом</div>
-                <button onclick="addToCart('Салад Лаганча 30 сом')">+ Savatga</button>
-            </div>
+        <div class="products" id="products-idishlar">
         </div>
     </div>
     <!-- idish mahsulotlari tugadi -->
+
+
+    <div id="category7" class="page">
+        <button class="back-btn" onclick="showPage('home')">⬅ Bosh sahifaga</button>
+        <div class="products" id="products-muzqaymoq">
+        </div>
+    </div>
+
+
+
+    <div id="category8" class="page">
+        <button class="back-btn" onclick="showPage('home')">⬅ Bosh sahifaga</button>
+        <div class="products" id="products-nimadur">
+        </div>
+    </div>
+
 
     <!-- Savat sahifasi -->
     <div id="cart" class="page cart-page">
@@ -505,6 +348,38 @@
             container.appendChild(totalDiv);
             container.appendChild(orderBtn);
         }
+
+        function renderDynamicProducts() {
+            const products = JSON.parse(localStorage.getItem("products")) || [];
+
+            const categoryMap = {
+                ichimliklar: "products-ichimliklar",
+                savzavotlar: "products-savzavotlar",
+                shirinliklar: "products-shirinliklar",
+                gusht: "products-gusht",
+                aralash: "products-aralash",
+                idishlar: "products-idishlar",
+                muzqaymoq: "products-muzqaymoq",
+                nimadur: "products-nimadur",
+            };
+
+            products.forEach(p => {
+                const wrapperId = categoryMap[p.category];
+                const wrapper = document.getElementById(wrapperId);
+                if (!wrapper) return;
+
+                const div = document.createElement("div");
+                div.className = "product";
+                div.innerHTML = `
+      <img src="${p.img}" />
+      <div class="product-info">${p.name} ${p.price} сом</div>
+      <button onclick="addToCart('${p.name} ${p.price} сом')">+ Саватга</button>
+    `;
+                wrapper.appendChild(div);
+            });
+        }
+
+        renderDynamicProducts(); // sahifa yuklanganda avtomatik ishlaydi
     </script>
     <!-- script qismi tugadi  -->
 
